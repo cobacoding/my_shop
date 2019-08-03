@@ -4,6 +4,7 @@ import 'package:carousel_pro/carousel_pro.dart';
 // my own imports
 import 'package:flutter_app/components/horizontal_listview.dart';
 import 'package:flutter_app/components/products.dart';
+import 'package:flutter_app/pages/cart.dart';
 
 //class HomePage extends StatelessWidget {
 //  @override
@@ -39,6 +40,7 @@ class _HomePageState extends State<HomePage> {
 //        animationDuration: Duration(milliseconds: 1000),
         dotSize: 4.0,
         indicatorBgPadding: 4.0,
+        dotBgColor: Colors.transparent,
       ),
     );
     return Scaffold(
@@ -58,7 +60,9 @@ class _HomePageState extends State<HomePage> {
                 Icons.shopping_cart,
                 color: Colors.white,
               ),
-              onPressed: () {})
+              onPressed: () {
+                Navigator.push(context, MaterialPageRoute(builder: (context) => new Cart()));
+              })
         ],
       ),
       drawer: new Drawer(
@@ -85,35 +89,37 @@ class _HomePageState extends State<HomePage> {
               onTap: () {},
               child: ListTile(
                 title: Text('Home Page'),
-                leading: Icon(Icons.home),
+                leading: Icon(Icons.home, color: Colors.red,),
               ),
             ),
             InkWell(
               onTap: () {},
               child: ListTile(
                 title: Text('My User'),
-                leading: Icon(Icons.person),
+                leading: Icon(Icons.person, color: Colors.red,),
               ),
             ),
             InkWell(
               onTap: () {},
               child: ListTile(
                 title: Text('My Order'),
-                leading: Icon(Icons.shopping_basket),
+                leading: Icon(Icons.shopping_basket, color: Colors.red,),
               ),
             ),
             InkWell(
-              onTap: () {},
+              onTap: () {
+                Navigator.push(context, MaterialPageRoute(builder: (context) => new Cart()));
+              },
               child: ListTile(
-                title: Text('Categories'),
-                leading: Icon(Icons.dashboard),
+                title: Text('Shopping cart'),
+                leading: Icon(Icons.shopping_cart, color: Colors.red,),
               ),
             ),
             InkWell(
               onTap: () {},
               child: ListTile(
                 title: Text('Favorite'),
-                leading: Icon(Icons.favorite),
+                leading: Icon(Icons.favorite, color: Colors.red,),
               ),
             ),
             Divider(),
@@ -123,7 +129,6 @@ class _HomePageState extends State<HomePage> {
                 title: Text('Settings'),
                 leading: Icon(
                   Icons.settings,
-                  color: Colors.blue,
                 ),
               ),
             ),
@@ -131,7 +136,7 @@ class _HomePageState extends State<HomePage> {
               onTap: () {},
               child: ListTile(
                 title: Text('About'),
-                leading: Icon(Icons.help, color: Colors.blue),
+                leading: Icon(Icons.help),
               ),
             ),
           ],
