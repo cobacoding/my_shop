@@ -53,11 +53,14 @@ class _ProductsState extends State<Products> {
         gridDelegate:
             new SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2),
         itemBuilder: (BuildContext context, int index) {
-          return Single_prod(
-            prod_name: product_list[index]['name'],
-            prod_picture: product_list[index]['picture'],
-            prod_old_price: product_list[index]['old_price'],
-            prod_price: product_list[index]['price'],
+          return Padding(
+            padding: const EdgeInsets.all(4.0),
+            child: Single_prod(
+              prod_name: product_list[index]['name'],
+              prod_picture: product_list[index]['picture'],
+              prod_old_price: product_list[index]['old_price'],
+              prod_price: product_list[index]['price'],
+            ),
           );
         });
   }
@@ -95,7 +98,7 @@ class Single_prod extends StatelessWidget {
                       ))),
               child: GridTile(
                   footer: Container(
-                    color: Colors.white,
+                    color: Colors.white70,
 //                    child: ListTile(
 //                      leading: Text(
 //                        prod_name,
@@ -114,6 +117,7 @@ class Single_prod extends StatelessWidget {
 //                            fontWeight: FontWeight.w800),
 //                      ),
 //                    ),
+//                    ===  Tidak menggunakan garis pada harga ====
                     child: new Row(
                       children: <Widget>[
                         Expanded(

@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_app/home.dart';
 
+import 'home.dart';
+
 class ProductDetails extends StatefulWidget {
   final product_detail_name;
   final product_detail_new_price;
@@ -201,7 +203,7 @@ class _ProductDetailsState extends State<ProductDetails> {
                   color: Colors.red,
                   onPressed: () {}),
               new IconButton(
-                  icon: Icon(Icons.add_shopping_cart),
+                  icon: Icon(Icons.favorite),
                   color: Colors.red,
                   onPressed: () {}),
             ],
